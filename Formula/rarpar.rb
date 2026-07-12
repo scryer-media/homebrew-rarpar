@@ -36,39 +36,39 @@ end
 class Rarpar < Formula
   desc "Smart RAR/PAR2 repair and extraction CLI"
   homepage "https://github.com/scryer-media/rarpar"
-  version "0.2.4"
-  license "GPL-3.0-or-later"
+  version "0.2.5"
+  license all_of: ["GPL-3.0-or-later", :cannot_represent]
 
   on_macos do
     on_arm do
-      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.4/rarpar-rarpar-v0.2.4-darwin-arm64.tar.gz"
-      sha256 "6c00aafcb05d95431ff819b650edbeaab9b912b705afbe1510e048d8afdfbfe4"
+      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.5/rarpar-rarpar-v0.2.5-darwin-arm64.tar.gz"
+      sha256 "c2a521cdbd819fca3e017d252c66a972a5fc02d45996a259a816d0b181eeba58"
     end
 
     on_intel do
-      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.4/rarpar-rarpar-v0.2.4-darwin-x86_64.tar.gz"
-      sha256 "5c958782b0ebeed0411bc46582f5281a4f619547e7f0b650e0b02c3f00e3c53f"
+      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.5/rarpar-rarpar-v0.2.5-darwin-x86_64.tar.gz"
+      sha256 "8cd1819f98ff271eaff4a3c13d58ba2f4d859bbd9fd210e82a618d68e1afd466"
     end
   end
 
   on_linux do
     on_arm do
       if RarparReleaseSelection.glibc_supported?
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.4/rarpar-rarpar-v0.2.4-linux-arm64-gnu.tar.gz"
-        sha256 "7da9f300ddf89e4136f62bcdffc6b812e9d1cadd023552b1d453e54d9d9fa82f"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.5/rarpar-rarpar-v0.2.5-linux-arm64-gnu-direct.tar.gz"
+        sha256 "95751951f84cc30ed12f2f17e26947b8dec509d694ea646ec0e840b1d70e0ce8"
       else
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.4/rarpar-rarpar-v0.2.4-linux-arm64-musl.tar.gz"
-        sha256 "a928c07c1900f11f01317fec2d9c96f3ea69e89db33ba0b47d6a8be3cb2ca5b2"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.5/rarpar-rarpar-v0.2.5-linux-arm64-musl-direct.tar.gz"
+        sha256 "7de21f6d72a076da242abb903fc0aeaab9c2e64db42646876ef2191922ccbc66"
       end
     end
 
     on_intel do
       if RarparReleaseSelection.glibc_supported?
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.4/rarpar-rarpar-v0.2.4-linux-x86_64-gnu.tar.gz"
-        sha256 "f5c290a1ed30f1b770db27fbb5843048f7699b2d0a6685aa0f6dc4de633852ba"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.5/rarpar-rarpar-v0.2.5-linux-x86_64-gnu-direct.tar.gz"
+        sha256 "54534de31dd28ddf0afa25d7e53d128650116c62a603f1951c0f667a1ee8ad66"
       else
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.4/rarpar-rarpar-v0.2.4-linux-x86_64-musl.tar.gz"
-        sha256 "38498088d6dbc58a9f90bd4bcf079c64dcfb0e2a832ec2133f73910040de91f9"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.2.5/rarpar-rarpar-v0.2.5-linux-x86_64-musl-direct.tar.gz"
+        sha256 "7b7de40a4c6efb15a9d901a29a83f5d92dbd1052283e9cff5112cb7005886be5"
       end
     end
   end
@@ -85,6 +85,9 @@ class Rarpar < Formula
     end
     pkgshare.install "README.md" if File.exist?("README.md")
     pkgshare.install "LICENSE" if File.exist?("LICENSE")
+    if File.exist?("LICENSE.GPL-3.0-or-later")
+      pkgshare.install "LICENSE.GPL-3.0-or-later"
+    end
     pkgshare.install "LICENSE.weaver-unrar" if File.exist?("LICENSE.weaver-unrar")
   end
 
