@@ -36,39 +36,39 @@ end
 class Rarpar < Formula
   desc "Smart RAR/PAR2 repair and extraction CLI"
   homepage "https://github.com/scryer-media/rarpar"
-  version "0.9.6"
+  version "0.9.7"
   license all_of: ["GPL-3.0-or-later", :cannot_represent]
 
   on_macos do
     on_arm do
-      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.6/rarpar-rarpar-v0.9.6-darwin-arm64.tar.gz"
-      sha256 "ddb2c4a9f3c9a6071e5840d62c0cbf807d088a0d12821836fc309515acf4ee2d"
+      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.7/rarpar-rarpar-v0.9.7-darwin-arm64.tar.gz"
+      sha256 "6f261af4e8d42f8bb446075a1aeb3ca030b98f42361339cfa5a33b749bdc43ed"
     end
 
     on_intel do
-      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.6/rarpar-rarpar-v0.9.6-darwin-x86_64.tar.gz"
-      sha256 "75d6fa699e0f2a9890ff7eb19f5bd82cb1e16eeaf6d07d1324ed515099f4618b"
+      url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.7/rarpar-rarpar-v0.9.7-darwin-x86_64.tar.gz"
+      sha256 "f4b5ddf52a3f2df344632b06e20372e09cfd70273a30fafc4f96bd842ff68aa9"
     end
   end
 
   on_linux do
     on_arm do
       if RarparReleaseSelection.glibc_supported?
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.6/rarpar-rarpar-v0.9.6-linux-arm64-gnu-direct.tar.gz"
-        sha256 "61a467ec07e344aab314bf23e718468b6b22728d13c73fba734894fa8502acdf"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.7/rarpar-rarpar-v0.9.7-linux-arm64-gnu-direct.tar.gz"
+        sha256 "68849ace700c41a6d2a0fb58a64e1812a9aace3a99a1f5b8088494e65be62e8e"
       else
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.6/rarpar-rarpar-v0.9.6-linux-arm64-musl-direct.tar.gz"
-        sha256 "4622636537080a539a898f008f99ae94f3bd5b0cfeb162a5a0382211a860650b"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.7/rarpar-rarpar-v0.9.7-linux-arm64-musl-direct.tar.gz"
+        sha256 "fd81da588bc82ca5d23afc9d9831a22582863fad2ae08a965ca3ef02b4ed4fb6"
       end
     end
 
     on_intel do
       if RarparReleaseSelection.glibc_supported?
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.6/rarpar-rarpar-v0.9.6-linux-x86_64-gnu-direct.tar.gz"
-        sha256 "fc6e356d5c74a33f25e362b1168a3289529bf8618feb1cfd909904b9ffacab08"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.7/rarpar-rarpar-v0.9.7-linux-x86_64-gnu-direct.tar.gz"
+        sha256 "4cf587ec951d82e3aa08c6f93d835d0749afd6e35e28b50c8012fb714e422ef3"
       else
-        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.6/rarpar-rarpar-v0.9.6-linux-x86_64-musl-direct.tar.gz"
-        sha256 "fa2fc12297f3a7f1fd83d4eeca11fa8d9217cbcea772166f504a01b7eceea86c"
+        url "https://github.com/scryer-media/rarpar/releases/download/rarpar-v0.9.7/rarpar-rarpar-v0.9.7-linux-x86_64-musl-direct.tar.gz"
+        sha256 "63e69886c9121b15f762aa1f7fde3fec7ac869ff426fb4647cc3c1cc630faf93"
       end
     end
   end
